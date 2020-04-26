@@ -6,7 +6,7 @@ const TodoItem = ({ todo, markComplete, delTodo }) => {
       background: "lightgrey",
       padding: "10px",
       borderBottom: "1px #ccc dotted",
-      textDecoration: todo.complete ? "line-through" : "none",
+      textDecoration: todo.completed ? "line-through" : "none",
     };
   };
 
