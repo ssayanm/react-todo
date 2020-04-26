@@ -5,7 +5,8 @@ import TodoItem from "./TodoItem";
 const Todos = () => {
   const [todos, setTodos] = useContext(DataContext);
 
-  const handleChangeCheckbox = (id) => {
+  //Toggle Complete
+  const markComplete = (id) => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
@@ -17,6 +18,20 @@ const Todos = () => {
     );
   };
 
+  //DeleteTodo
+  const delTodo = (id) => {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== id;
+        // if (todo.id !== id) {
+        //   return { ...todo, complete: !todo.complete };
+        // } else {
+        //   return todo;
+        // }
+      })
+    );
+  };
+
   return (
     <div>
       <div>
@@ -24,7 +39,8 @@ const Todos = () => {
           <TodoItem
             key={todo.id}
             todo={todo}
-            handleChangeCheckbox={handleChangeCheckbox}
+            markComplete={markComplete}
+            delTodo={delTodo}
           />
         ))}
       </div>
