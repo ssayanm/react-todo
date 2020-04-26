@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { DataContext } from "../DataContext.js";
+import { v4 as uuidv4 } from "uuid";
 
 const AddTodo = () => {
   const [title, setTitle] = useState("");
@@ -13,7 +14,10 @@ const AddTodo = () => {
 
   const addTodo = (e) => {
     e.preventDefault();
-    setTodos((prevTodos) => [...prevTodos, { title: title, complete: false }]);
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { id: uuidv4(), title: title, complete: false },
+    ]);
   };
 
   return (

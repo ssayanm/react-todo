@@ -1,11 +1,12 @@
 import React, { useState, createContext } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export const DataContext = createContext();
 
 const initialTodos = [
-  { id: 1, title: "Take out", complete: false },
-  { id: 2, title: "Clean Bedroom", complete: true },
-  { id: 3, title: "paint windows", complete: false },
+  { id: uuidv4(), title: "Take out", complete: false },
+  { id: uuidv4(), title: "Clean Bedroom", complete: true },
+  { id: uuidv4(), title: "paint windows", complete: false },
 ];
 
 export const DataProvider = (props) => {

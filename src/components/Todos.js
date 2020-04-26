@@ -23,11 +23,6 @@ const Todos = () => {
     setTodos(
       todos.filter((todo) => {
         return todo.id !== id;
-        // if (todo.id !== id) {
-        //   return { ...todo, complete: !todo.complete };
-        // } else {
-        //   return todo;
-        // }
       })
     );
   };
