@@ -27,7 +27,7 @@ const TodoItem = ({ todo, markComplete, delTodo }) => {
           <input
             type="checkbox"
             onChange={() => markComplete(todo.id)}
-            checked={todo.complete}
+            checked={todo.completed}
           />
           <button onClick={() => delTodo(todo.id)} style={btnStyle}>
             x

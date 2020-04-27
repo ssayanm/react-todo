@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { DataContext } from "../DataContext.js";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
@@ -13,16 +13,25 @@ const AddTodo = () => {
     setTitle(e.target.value);
   };
 
-  const addTodo = (e) => {
+  // const addTodo = (e) => {
+  //   e.preventDefault();
+  //   setTodos((prevTodos) => [
+  //     ...prevTodos,
+  //     { id: uuidv4(), title: title, completed: false },
+  //   ]);
+  // };
+
+  const addData = async (e) => {
     e.preventDefault();
-    setTodos((prevTodos) => [
-      ...prevTodos,
-      { id: uuidv4(), title: title, complete: false },
-    ]);
+    const result = await axios.post(
+      "https://jsonplaceholder.typicode.com/todos?_limit=10",
+      { id: uuidv4(), title: title, completed: false }
+    );
+    setTodos((prevTodos) => [...prevTodos, result.data]);
   };
 
   return (
-    <form onSubmit={addTodo} style={{ display: "flex" }}>
+    <form onSubmit={addData} style={{ display: "flex" }}>
       <input
         type="text"
         name="title"

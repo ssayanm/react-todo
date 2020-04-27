@@ -10,7 +10,7 @@ const Todos = () => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
-          return { ...todo, complete: !todo.complete };
+          return { ...todo, completed: !todo.completed };
         } else {
           return todo;
         }
