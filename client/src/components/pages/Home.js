@@ -1,6 +1,6 @@
 import React from "react";
-import Todos from "../../components/Todos";
-import AddTodo from "../../components/AddTodo";
+import Todos from "../Todos";
+import AddTodo from "../AddTodo";
 
 const Home = () => {
   return (

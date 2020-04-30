@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
-const TodoItem = ({ todo, markComplete, delTodo }) => {
+const TodoItem = ({ todo }) => {
+  const { delTodo } = useContext(GlobalContext);
+
   const getStyle = () => {
     return {
       background: "lightgrey",
@@ -26,7 +29,7 @@ const TodoItem = ({ todo, markComplete, delTodo }) => {
         <p>
           <input
             type="checkbox"
-            onChange={() => markComplete(todo.id)}
+            //onChange={() => markComplete(todo.id)}
             checked={todo.completed}
           />
           <button onClick={() => delTodo(todo.id)} style={btnStyle}>

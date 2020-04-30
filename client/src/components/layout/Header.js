@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <header style={headerStyle}>
-        <h1>TodoList</h1>
+        <h1>My TodoList</h1>
         <Link to="/">Home</Link> | <Link to="/about">About</Link>
       </header>
     </div>
@@ -13,8 +13,8 @@ const Header = () => {
 };
 
 const headerStyle = {
-  background: "#333",
-  color: "#fff",
+  background: "#FDBD2C",
+  color: "#000",
   textAlign: "center",
   paddding: "10px",
 };
