@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState.js";
 import { v4 as uuidv4 } from "uuid";
-//import axios from "axios";
 
 const AddTodo = () => {
   const { addTodo } = useContext(GlobalContext);

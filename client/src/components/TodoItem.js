@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 const TodoItem = ({ todo }) => {
-  const { delTodo } = useContext(GlobalContext);
+  const { deleteTodo } = useContext(GlobalContext);
 
   const getStyle = () => {
     return {
@@ -32,7 +32,7 @@ const TodoItem = ({ todo }) => {
             //onChange={() => markComplete(todo.id)}
             checked={todo.completed}
           />
-          <button onClick={() => delTodo(todo.id)} style={btnStyle}>
+          <button onClick={() => deleteTodo(todo._id)} style={btnStyle}>
             x
           </button>
           {todo.title}

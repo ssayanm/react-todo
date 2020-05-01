@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import TodoItem from "./TodoItem";
 
-const Todos = () => {
+const TodoList = () => {
   const { todos, getTodos } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -27,11 +27,11 @@ const Todos = () => {
     <div>
       <div>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo._id} todo={todo} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Todos;
+export default TodoList;

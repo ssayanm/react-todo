@@ -70,16 +70,6 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios(
-  //       "https://jsonplaceholder.typicode.com/todos?_limit=10"
-  //     );
-  //     setTodos(result.data);
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <GlobalContext.Provider
       value={{

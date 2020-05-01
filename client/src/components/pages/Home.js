@@ -1,12 +1,13 @@
 import React from "react";
-import Todos from "../Todos";
+import TodoList from "../TodosList";
+
 import AddTodo from "../AddTodo";
 
 const Home = () => {
   return (
     <React.Fragment>
       <AddTodo />
-      <Todos />
+      <TodoList />
     </React.Fragment>
   );
 };
