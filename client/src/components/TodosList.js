@@ -10,19 +10,6 @@ const TodoList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //Toggle Complete
-  // const markComplete = (id) => {
-  //   setTodos(
-  //     todos.map((todo) => {
-  //       if (todo.id === id) {
-  //         return { ...todo, completed: !todo.completed };
-  //       } else {
-  //         return todo;
-  //       }
-  //     })
-  //   );
-  // };
-
   return (
     <div>
       <div>

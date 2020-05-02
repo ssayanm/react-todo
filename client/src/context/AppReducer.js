@@ -19,6 +19,19 @@ export default (state, action) => {
         todos: [...state.todos, action.payload],
       };
 
+    case "COMPLETE_TODO":
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          state.todos.map((todo) => {
+            if (todo._id === action.payload) {
+              return (todo.completed = true);
+            }
+          }),
+        ],
+      };
+
     case "TODO_ERROR":
       return {
         ...state,

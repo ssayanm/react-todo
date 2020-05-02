@@ -80,3 +80,34 @@ exports.deleteTodo = async (req, res, next) => {
     });
   }
 };
+
+//@desc     TOggle Complete
+//@route    DELETE /api/v1/todos/:id
+//@access   Public
+
+exports.markComplete = async (req, res, next) => {
+  const { completed } = req.body;
+
+  try {
+    const todo = await Todo.findById(req.params.id);
+
+    if (!todo) {
+      return res.status(404).json({
+        success: false,
+        error: "No todo found",
+      });
+    }
+
+    await todo.save();
+
+    return res.status(200).json({
+      success: true,
+      data: {},
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      error: "Server Error",
+    });
+  }
+};
