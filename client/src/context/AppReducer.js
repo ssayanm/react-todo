@@ -22,14 +22,9 @@ export default (state, action) => {
     case "COMPLETE_TODO":
       return {
         ...state,
-        todos: [
-          ...state.todos,
-          state.todos.map((todo) => {
-            if (todo._id === action.payload) {
-              return (todo.completed = true);
-            }
-          }),
-        ],
+        todos: state.todos.map((todo) =>
+          todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+        ),
       };
 
     case "TODO_ERROR":
