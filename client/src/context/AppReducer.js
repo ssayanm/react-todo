@@ -21,11 +21,19 @@ export default (state, action) => {
 
     case "COMPLETE_TODO":
       return {
-        ...state,
         todos: state.todos.map((todo) =>
-          todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+          todo._id === action.payload
+            ? { ...todo, completed: !todo.completed }
+            : todo
         ),
       };
+
+    // case "COMPLETE_TODO":
+    //   return {
+    //     todos: state.todos.map((todo) =>
+    //       todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+    //     ),
+    //   };
 
     case "TODO_ERROR":
       return {
