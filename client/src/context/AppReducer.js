@@ -19,8 +19,9 @@ export default (state, action) => {
         todos: [...state.todos, action.payload],
       };
 
-    case "COMPLETE_TODO":
+    case "COMPLETED_TODO":
       return {
+        ...state,
         todos: state.todos.map((todo) =>
           todo._id === action.payload
             ? { ...todo, completed: !todo.completed }

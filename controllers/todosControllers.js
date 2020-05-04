@@ -82,13 +82,11 @@ exports.deleteTodo = async (req, res, next) => {
 };
 
 //@desc     TOggle Complete
-//@route    DELETE /api/v1/todos/:id
+//@route    PATCH /api/v1/todos/:id
 //@access   Public
 
 exports.markComplete = async (req, res, next) => {
-  const { completed } = req.body;
   const todo = await Todo.findById(req.params.id);
-
   try {
     if (!todo) {
       return res.status(404).json({
@@ -97,7 +95,7 @@ exports.markComplete = async (req, res, next) => {
       });
     } else {
       todo.completed = req.body.completed;
-      todo.save();
+      await todo.save();
       return res.status(200).json({
         success: true,
         data: todo,

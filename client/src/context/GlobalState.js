@@ -54,7 +54,7 @@ export const GlobalProvider = ({ children }) => {
     try {
       await axios.patch(`/api/v1/todos/${id}`);
       dispatch({
-        type: "COMPLETE_TODO",
+        type: "COMPLETED_TODO",
         payload: id,
       });
     } catch (err) {
