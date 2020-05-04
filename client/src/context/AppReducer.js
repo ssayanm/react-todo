@@ -22,6 +22,7 @@ export default (state, action) => {
     case "COMPLETED_TODO":
       return {
         ...state,
+        // looping through each todos items and checking the clicked chekcbox todo id with the existing id of todo, when it is matching I am toggling the "completed" for true or false and if not matching I am just returing the todo
         todos: state.todos.map((todo) =>
           todo._id === action.payload
             ? { ...todo, completed: !todo.completed }
