@@ -28,13 +28,6 @@ export default (state, action) => {
         ),
       };
 
-    // case "COMPLETE_TODO":
-    //   return {
-    //     todos: state.todos.map((todo) =>
-    //       todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
-    //     ),
-    //   };
-
     case "TODO_ERROR":
       return {
         ...state,

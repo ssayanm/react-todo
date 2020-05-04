@@ -50,11 +50,19 @@ export const GlobalProvider = ({ children }) => {
   };
 
   // Toggle Complete
-  const markComplete = (id) => {
-    dispatch({
-      type: "COMPLETE_TODO",
-      payload: id,
-    });
+  const markComplete = async (id) => {
+    try {
+      await axios.patch(`/api/v1/todos/${id}`);
+      dispatch({
+        type: "COMPLETE_TODO",
+        payload: id,
+      });
+    } catch (err) {
+      dispatch({
+        type: "TODO_ERROR",
+        payload: err.response.data.error,
+      });
+    }
   };
 
   const addTodo = async (todo) => {

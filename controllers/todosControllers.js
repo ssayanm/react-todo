@@ -87,23 +87,22 @@ exports.deleteTodo = async (req, res, next) => {
 
 exports.markComplete = async (req, res, next) => {
   const { completed } = req.body;
+  const todo = await Todo.findById(req.params.id);
 
   try {
-    const todo = await Todo.findById(req.params.id);
-
     if (!todo) {
       return res.status(404).json({
         success: false,
         error: "No todo found",
       });
+    } else {
+      todo.completed = req.body.completed;
+      todo.save();
+      return res.status(200).json({
+        success: true,
+        data: todo,
+      });
     }
-
-    await todo.save();
-
-    return res.status(200).json({
-      success: true,
-      data: {},
-    });
   } catch (err) {
     return res.status(500).json({
       success: false,
