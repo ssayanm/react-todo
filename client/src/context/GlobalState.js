@@ -52,8 +52,7 @@ export const GlobalProvider = ({ children }) => {
   // Toggle Complete
   const markComplete = async (id) => {
     try {
-      const mytest = await axios.patch(`/api/v1/todos/${id}`);
-      console.log(mytest);
+      await axios.patch(`/api/v1/todos/${id}`);
       dispatch({
         type: "COMPLETED_TODO",
         payload: id,
