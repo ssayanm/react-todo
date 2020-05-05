@@ -88,7 +88,7 @@ exports.deleteTodo = async (req, res, next) => {
 exports.markComplete = async (req, res, next) => {
   const todo = await Todo.findById(req.params.id);
 
-  todo.completed ? (todo.completed = false) : (todo.completed = true);
+  todo.completed = true ? !todo.completed : todo.completed;
 
   try {
     await todo.save();
