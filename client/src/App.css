@@ -7,6 +7,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.4;
+  /* background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); */
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 a {
@@ -16,7 +18,11 @@ a {
 }
 
 .container {
-  padding: 0 1em;
+  /* padding: rem 1em; */
+  max-width: 30rem;
+  margin: 13rem auto;
+  max-height: 100vh;
+  /* background-color: red; */
 }
 
 .btn {
