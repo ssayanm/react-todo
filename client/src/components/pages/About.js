@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <React.Fragment>
+    <div style={aboutStyle}>
       <h2>About Page</h2>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -15,8 +15,15 @@ const About = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </p>
-    </React.Fragment>
+    </div>
   );
+};
+
+const aboutStyle = {
+  background: "#ffffff",
+  color: "#000",
+  textAlign: "center",
+  padding: "2rem",
 };
 
 export default About;

@@ -8,7 +8,20 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.4;
   /* background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); */
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    315deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(241, 112, 64, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 a {
@@ -18,17 +31,14 @@ a {
 }
 
 .container {
-  /* padding: rem 1em; */
-  max-width: 30rem;
-  margin: 13rem auto;
-  max-height: 100vh;
-  /* background-color: red; */
+  width: 28rem;
+  margin: 10rem auto;
 }
 
 .btn {
   display: inline-block;
   border: none;
-  background: #555;
+  background: #a52a2a;
   color: #fff;
   padding: 7px 20px;
   cursor: pointer;
